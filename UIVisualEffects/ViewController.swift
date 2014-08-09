@@ -7,7 +7,6 @@ class ViewController: UIViewController {
 
         let scrollView = UIScrollView(frame: self.view.bounds)
         scrollView.delegate = self
-        scrollView.bounces = false
         scrollView.backgroundColor = UIColor.blackColor()
         self.view.addSubview(scrollView)
 
@@ -72,15 +71,12 @@ class ViewController: UIViewController {
 
 
         let extraLightTitleLabel = titleLabel(text: "Extra Light Blur")
-        extraLightTitleLabel.textColor = UIColor(white: 0.25, alpha: 1)
         extraLightVibrancyView.contentView.addSubview(extraLightTitleLabel)
 
         let lightTitleLabel = titleLabel(text: "Light Blur")
-        lightTitleLabel.textColor = UIColor(white: 0.6, alpha: 1)
         lightVibrancyView.contentView.addSubview(lightTitleLabel)
 
         let darkTitleLabel = titleLabel(text: "Dark Blur")
-        darkTitleLabel.textColor = UIColor(white: 0.64, alpha: 1)
         darkVibrancyView.contentView.addSubview(darkTitleLabel)
 
 
@@ -123,7 +119,7 @@ class ViewController: UIViewController {
         statusBarBlurView.contentView.addSubview(statusBarVibrancyView)
 
         let statusBar = UIApplication.sharedApplication().valueForKey("statusBar") as UIView
-        statusBar.superview.insertSubview(statusBarBlurView, belowSubview: statusBar)
+        statusBar.superview!.insertSubview(statusBarBlurView, belowSubview: statusBar)
         self.view.addSubview(statusBarBlurView)
 
         let statusBarBackgroundImage = UIImage(named: "MaskPixel").imageWithRenderingMode(.AlwaysTemplate)

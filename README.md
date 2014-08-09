@@ -18,7 +18,7 @@ There are three types of blurring: extra light, light, and dark. You specify one
 
 The vibrancy effect lets the content underneath a blurred view show through more vibrantly. It looks pretty but can make text and icons harder to read so use it judiciously. You specify a UIBlurEffect when creating a UIVibrancyEffect. The UIBlurEffect should be the one you used to create the blurred UIVisualEffectView. You then use the UIVibrancyEffect to create another UIVisualEffectView that you add to the blurred UIVisualEffectView's contentView.
 
-To render vibrant text, create a UILabel with a specially picked text color that depends on the blur effect underneath. **For the default appearance, use 0.25 white with extra light blur, 0.6 white with light blur, and 0.64 white with dark blur.** With these background colors your text will appear the same as an icon would. You can use different colors if you want your text to stand out more or take on a hue. However, some colors are rendered either opaque or invisible. Finally, add the UILabel to the vibrancy UIVisualEffectView's contentView.
+To render vibrant text, create a UILabel and add it to the vibrancy UIVisualEffectView's contentView. The color of the UILabel does not affect its appearance.
 
 For vibrant images, create a UIImage that is treated as a template mask with `UIImageRenderingMode.AlwaysTemplate`. One side effect is that the colors in your image are ignored. However, this lets you easily use your image in a vibrancy UIVisualEffectView. As with text, you add the UIImage to the vibrancy UIVisualEffectView's contentView.
 
