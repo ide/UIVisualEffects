@@ -11,6 +11,7 @@
 		78837A26194C548000EDBE76 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78837A25194C548000EDBE76 /* ViewController.swift */; };
 		78837A29194C548000EDBE76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78837A27194C548000EDBE76 /* Main.storyboard */; };
 		78837A2B194C548000EDBE76 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78837A2A194C548000EDBE76 /* Images.xcassets */; };
+		78D3130D19D7D12400DD3604 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78D3130C19D7D12400DD3604 /* LaunchScreen.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		78837A25194C548000EDBE76 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		78837A28194C548000EDBE76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78837A2A194C548000EDBE76 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		78D3130C19D7D12400DD3604 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				78837A25194C548000EDBE76 /* ViewController.swift */,
 				78837A2A194C548000EDBE76 /* Images.xcassets */,
 				78837A27194C548000EDBE76 /* Main.storyboard */,
+				78D3130C19D7D12400DD3604 /* LaunchScreen.xib */,
 				78837A21194C548000EDBE76 /* Supporting Files */,
 			);
 			path = UIVisualEffects;
@@ -126,6 +129,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78837A2B194C548000EDBE76 /* Images.xcassets in Resources */,
+				78D3130D19D7D12400DD3604 /* LaunchScreen.xib in Resources */,
 				78837A29194C548000EDBE76 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -237,7 +241,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = UIVisualEffects/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -248,7 +251,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				INFOPLIST_FILE = UIVisualEffects/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
