@@ -22,4 +22,4 @@ To render vibrant text, create a UILabel and add it to the vibrancy UIVisualEffe
 
 For vibrant images, create a UIImage that is treated as a template mask with `UIImageRenderingMode.AlwaysTemplate`. One side effect is that the colors in your image are ignored. However, this lets you easily use your image in a vibrancy UIVisualEffectView. As with text, you add the UIImage to the vibrancy UIVisualEffectView's contentView.
 
-In early iOS 8 betas you could [cancel the vibrancy effect](CancelingVibrancy.md) so that subviews would look blurred on top of a vibrant background. However, this undocumented effect has been 
+In early iOS 8 betas you could [cancel the vibrancy effect](CancelingVibrancy.md) so that subviews would look blurred on top of a vibrant background. However, this undocumented effect has been removed.
