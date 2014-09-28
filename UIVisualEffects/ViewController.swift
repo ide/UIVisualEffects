@@ -27,17 +27,14 @@ class ViewController: UIViewController {
 
         let darkBlur = UIBlurEffect(style: .Dark)
         let darkBlurView = UIVisualEffectView(effect: darkBlur)
-        darkBlurView.userInteractionEnabled = false
         self.view.addSubview(darkBlurView)
 
         let lightBlur = UIBlurEffect(style: .Light)
         let lightBlurView = UIVisualEffectView(effect: lightBlur)
-        lightBlurView.userInteractionEnabled = false
         self.view.addSubview(lightBlurView)
 
         let extraLightBlur = UIBlurEffect(style: .ExtraLight)
         let extraLightBlurView = UIVisualEffectView(effect: extraLightBlur)
-        extraLightBlurView.userInteractionEnabled = false
         self.view.addSubview(extraLightBlurView)
 
         let blurAreaAmount = self.view.bounds.height / 4
@@ -83,16 +80,15 @@ class ViewController: UIViewController {
         addVibrantStatusBarBackground(extraLightBlur)
     }
 
-    func vibrancyEffectView(forBlurEffectView blurEffectView:UIVisualEffectView) -> UIVisualEffectView {
+    private func vibrancyEffectView(forBlurEffectView blurEffectView:UIVisualEffectView) -> UIVisualEffectView {
         let vibrancy = UIVibrancyEffect(forBlurEffect: blurEffectView.effect as UIBlurEffect)
         let vibrancyView = UIVisualEffectView(effect: vibrancy)
-        vibrancyView.userInteractionEnabled = false
         vibrancyView.frame = blurEffectView.bounds
         vibrancyView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
         return vibrancyView
     }
 
-    func tintedIconButton(iconNamed iconName: String) -> UIButton {
+    private func tintedIconButton(iconNamed iconName: String) -> UIButton {
         let iconImage = UIImage(named: iconName).imageWithRenderingMode(.AlwaysTemplate)
         let borderImage = UIImage(named: "ButtonRoundRect").imageWithRenderingMode(.AlwaysTemplate)
 
@@ -102,7 +98,7 @@ class ViewController: UIViewController {
         return button
     }
 
-    func titleLabel(#text: String) -> UILabel {
+    private func titleLabel(#text: String) -> UILabel {
         let label = UILabel()
         label.text = text
         label.sizeToFit()
@@ -110,7 +106,7 @@ class ViewController: UIViewController {
         return label
     }
 
-    func addVibrantStatusBarBackground(effect: UIBlurEffect) {
+    private func addVibrantStatusBarBackground(effect: UIBlurEffect) {
         let statusBarBlurView = UIVisualEffectView(effect: effect)
         statusBarBlurView.frame = UIApplication.sharedApplication().statusBarFrame
         statusBarBlurView.autoresizingMask = .FlexibleWidth
@@ -134,7 +130,8 @@ class ViewController: UIViewController {
     }
 }
 
-extension ViewController : UIScrollViewDelegate {
+extension ViewController: UIScrollViewDelegate {
+
     func viewForZoomingInScrollView(scrollView: UIScrollView!) -> UIView! {
         return scrollView.subviews.isEmpty ? nil : scrollView.subviews[0] as UIView
     }

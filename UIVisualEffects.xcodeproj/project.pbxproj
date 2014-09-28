@@ -12,6 +12,7 @@
 		78837A29194C548000EDBE76 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 78837A27194C548000EDBE76 /* Main.storyboard */; };
 		78837A2B194C548000EDBE76 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 78837A2A194C548000EDBE76 /* Images.xcassets */; };
 		78D3130D19D7D12400DD3604 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 78D3130C19D7D12400DD3604 /* LaunchScreen.xib */; };
+		78D3130F19D7DBED00DD3604 /* UIVisualEffectView+Touches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78D3130E19D7DBED00DD3604 /* UIVisualEffectView+Touches.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		78837A28194C548000EDBE76 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		78837A2A194C548000EDBE76 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		78D3130C19D7D12400DD3604 /* LaunchScreen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LaunchScreen.xib; sourceTree = "<group>"; };
+		78D3130E19D7DBED00DD3604 /* UIVisualEffectView+Touches.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIVisualEffectView+Touches.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,8 +40,8 @@
 		78837A15194C548000EDBE76 = {
 			isa = PBXGroup;
 			children = (
-				78837A20194C548000EDBE76 /* UIVisualEffects */,
 				78837A1F194C548000EDBE76 /* Products */,
+				78837A20194C548000EDBE76 /* UIVisualEffects */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,12 +56,13 @@
 		78837A20194C548000EDBE76 /* UIVisualEffects */ = {
 			isa = PBXGroup;
 			children = (
-				78837A23194C548000EDBE76 /* AppDelegate.swift */,
-				78837A25194C548000EDBE76 /* ViewController.swift */,
-				78837A2A194C548000EDBE76 /* Images.xcassets */,
-				78837A27194C548000EDBE76 /* Main.storyboard */,
-				78D3130C19D7D12400DD3604 /* LaunchScreen.xib */,
 				78837A21194C548000EDBE76 /* Supporting Files */,
+				78837A23194C548000EDBE76 /* AppDelegate.swift */,
+				78837A2A194C548000EDBE76 /* Images.xcassets */,
+				78D3130C19D7D12400DD3604 /* LaunchScreen.xib */,
+				78837A27194C548000EDBE76 /* Main.storyboard */,
+				78D3130E19D7DBED00DD3604 /* UIVisualEffectView+Touches.swift */,
+				78837A25194C548000EDBE76 /* ViewController.swift */,
 			);
 			path = UIVisualEffects;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				78837A24194C548000EDBE76 /* AppDelegate.swift in Sources */,
+				78D3130F19D7DBED00DD3604 /* UIVisualEffectView+Touches.swift in Sources */,
 				78837A26194C548000EDBE76 /* ViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
