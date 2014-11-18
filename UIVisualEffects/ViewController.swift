@@ -10,7 +10,7 @@ class ViewController: UIViewController {
         scrollView.backgroundColor = UIColor.blackColor()
         self.view.addSubview(scrollView)
 
-        let yosemiteImage = UIImage(named: "Yosemite")
+        let yosemiteImage = UIImage(named: "Yosemite")!
         let backgroundImageView = UIImageView(image: yosemiteImage)
         scrollView.addSubview(backgroundImageView)
 
@@ -89,8 +89,8 @@ class ViewController: UIViewController {
     }
 
     private func tintedIconButton(iconNamed iconName: String) -> UIButton {
-        let iconImage = UIImage(named: iconName).imageWithRenderingMode(.AlwaysTemplate)
-        let borderImage = UIImage(named: "ButtonRoundRect").imageWithRenderingMode(.AlwaysTemplate)
+        let iconImage = UIImage(named: iconName)!.imageWithRenderingMode(.AlwaysTemplate)
+        let borderImage = UIImage(named: "ButtonRoundRect")!.imageWithRenderingMode(.AlwaysTemplate)
 
         let button = UIButton(frame: CGRect(origin: CGPointZero, size: borderImage.size))
         button.setBackgroundImage(borderImage, forState: .Normal)
@@ -118,7 +118,7 @@ class ViewController: UIViewController {
         statusBar.superview!.insertSubview(statusBarBlurView, belowSubview: statusBar)
         self.view.addSubview(statusBarBlurView)
 
-        let statusBarBackgroundImage = UIImage(named: "MaskPixel").imageWithRenderingMode(.AlwaysTemplate)
+        let statusBarBackgroundImage = UIImage(named: "MaskPixel")!.imageWithRenderingMode(.AlwaysTemplate)
         let statusBarBackgroundView = UIImageView(image: statusBarBackgroundImage)
         statusBarBackgroundView.frame = statusBarVibrancyView.bounds
         statusBarBackgroundView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
