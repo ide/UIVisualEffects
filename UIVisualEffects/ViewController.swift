@@ -81,7 +81,7 @@ class ViewController: UIViewController {
     }
 
     private func vibrancyEffectView(forBlurEffectView blurEffectView:UIVisualEffectView) -> UIVisualEffectView {
-        let vibrancy = UIVibrancyEffect(forBlurEffect: blurEffectView.effect as UIBlurEffect)
+        let vibrancy = UIVibrancyEffect(forBlurEffect: blurEffectView.effect as! UIBlurEffect)
         let vibrancyView = UIVisualEffectView(effect: vibrancy)
         vibrancyView.frame = blurEffectView.bounds
         vibrancyView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
@@ -114,7 +114,7 @@ class ViewController: UIViewController {
         let statusBarVibrancyView = vibrancyEffectView(forBlurEffectView: statusBarBlurView)
         statusBarBlurView.contentView.addSubview(statusBarVibrancyView)
 
-        let statusBar = UIApplication.sharedApplication().valueForKey("statusBar") as UIView
+        let statusBar = UIApplication.sharedApplication().valueForKey("statusBar") as! UIView
         statusBar.superview!.insertSubview(statusBarBlurView, belowSubview: statusBar)
         self.view.addSubview(statusBarBlurView)
 
@@ -132,11 +132,11 @@ class ViewController: UIViewController {
 
 extension ViewController: UIScrollViewDelegate {
 
-    func viewForZoomingInScrollView(scrollView: UIScrollView!) -> UIView! {
-        return scrollView.subviews.isEmpty ? nil : scrollView.subviews[0] as UIView
+    func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
+        return scrollView.subviews.isEmpty ? nil : (scrollView.subviews[0] as! UIView)
     }
 
-    func scrollViewDidZoom(scrollView: UIScrollView!) {
+    func scrollViewDidZoom(scrollView: UIScrollView) {
         setContentInsetToCenterScrollView(scrollView)
     }
 
