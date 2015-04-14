@@ -45,7 +45,7 @@ class ViewController: UIViewController {
 
         darkBlurView.frame.integerize()
         lightBlurView.frame.integerize()
-        extraLightBlur.frame.integerize()
+        extraLightBlurView.frame.integerize()
 
         let extraLightVibrancyView = vibrancyEffectView(forBlurEffectView: extraLightBlurView)
         extraLightBlurView.contentView.addSubview(extraLightVibrancyView)
