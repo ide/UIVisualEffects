@@ -3,7 +3,7 @@ UIVisualEffects
 
 Learn how to use UIVisualEffectViews with UIBlurEffect and UIVibrancyEffect in iOS 8. The example is written in Swift.
 
-<img src="Screenshots/UIVisualEffects.png" width="320" height="568" alt="Screenshot">
+<img src="Screenshots/UIVisualEffects.png" width="375" height="667" alt="Screenshot">
 
 UIVisualEffectView and UIVisualEffect
 -------------------------------------
