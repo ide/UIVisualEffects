@@ -10,13 +10,13 @@ class ViewController: UIViewController {
         scrollView.backgroundColor = UIColor.blackColor()
         self.view.addSubview(scrollView)
 
-        let yosemiteImage = UIImage(named: "Yosemite")!
-        let backgroundImageView = UIImageView(image: yosemiteImage)
+        let elCapitanImage = UIImage(named: "ElCapitan")!
+        let backgroundImageView = UIImageView(image: elCapitanImage)
         scrollView.addSubview(backgroundImageView)
 
-        scrollView.contentSize = yosemiteImage.size
-        let minHorizScale = scrollView.bounds.width / yosemiteImage.size.width
-        let minVertScale = scrollView.bounds.height / yosemiteImage.size.height
+        scrollView.contentSize = elCapitanImage.size
+        let minHorizScale = scrollView.bounds.width / elCapitanImage.size.width
+        let minVertScale = scrollView.bounds.height / elCapitanImage.size.height
         scrollView.minimumZoomScale = min(minHorizScale, minVertScale)
         scrollView.maximumZoomScale = 1.0
         scrollView.zoomScale = max(minHorizScale, minVertScale)
