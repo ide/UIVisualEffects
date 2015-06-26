@@ -87,7 +87,7 @@ class ViewController: UIViewController {
         let vibrancy = UIVibrancyEffect(forBlurEffect: blurEffectView.effect as! UIBlurEffect)
         let vibrancyView = UIVisualEffectView(effect: vibrancy)
         vibrancyView.frame = blurEffectView.bounds
-        vibrancyView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        vibrancyView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         return vibrancyView
     }
 
@@ -101,7 +101,7 @@ class ViewController: UIViewController {
         return button
     }
 
-    private func titleLabel(#text: String) -> UILabel {
+    private func titleLabel(text text: String) -> UILabel {
         let label = UILabel()
         label.text = text
         label.sizeToFit()
@@ -124,7 +124,7 @@ class ViewController: UIViewController {
         let statusBarBackgroundImage = UIImage(named: "MaskPixel")!.imageWithRenderingMode(.AlwaysTemplate)
         let statusBarBackgroundView = UIImageView(image: statusBarBackgroundImage)
         statusBarBackgroundView.frame = statusBarVibrancyView.bounds
-        statusBarBackgroundView.autoresizingMask = .FlexibleWidth | .FlexibleHeight
+        statusBarBackgroundView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         statusBarVibrancyView.contentView.addSubview(statusBarBackgroundView)
     }
 
@@ -136,7 +136,7 @@ class ViewController: UIViewController {
 extension ViewController: UIScrollViewDelegate {
 
     func viewForZoomingInScrollView(scrollView: UIScrollView) -> UIView? {
-        return scrollView.subviews.isEmpty ? nil : (scrollView.subviews[0] as! UIView)
+        return scrollView.subviews.isEmpty ? nil : (scrollView.subviews[0] as UIView)
     }
 
     func scrollViewDidZoom(scrollView: UIScrollView) {
