@@ -39,13 +39,13 @@ class ViewController: UIViewController {
 
         let blurAreaAmount = self.view.bounds.height / 4
         var remainder: CGRect
-        (darkBlurView.frame, remainder) = self.view.bounds.rectsByDividing(blurAreaAmount, fromEdge: CGRectEdge.MaxYEdge)
-        (lightBlurView.frame, remainder) = remainder.rectsByDividing(blurAreaAmount, fromEdge: CGRectEdge.MaxYEdge)
-        (extraLightBlurView.frame, remainder) = remainder.rectsByDividing(blurAreaAmount, fromEdge:CGRectEdge.MaxYEdge)
+        (darkBlurView.frame, remainder) = self.view.bounds.divide(blurAreaAmount, fromEdge: CGRectEdge.MaxYEdge)
+        (lightBlurView.frame, remainder) = remainder.divide(blurAreaAmount, fromEdge: CGRectEdge.MaxYEdge)
+        (extraLightBlurView.frame, remainder) = remainder.divide(blurAreaAmount, fromEdge:CGRectEdge.MaxYEdge)
 
-        darkBlurView.frame.integerize()
-        lightBlurView.frame.integerize()
-        extraLightBlurView.frame.integerize()
+        darkBlurView.frame.makeIntegralInPlace()
+        lightBlurView.frame.makeIntegralInPlace()
+        extraLightBlurView.frame.makeIntegralInPlace()
 
         let extraLightVibrancyView = vibrancyEffectView(forBlurEffectView: extraLightBlurView)
         extraLightBlurView.contentView.addSubview(extraLightVibrancyView)
