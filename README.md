@@ -1,7 +1,7 @@
 UIVisualEffects
 ===============
 
-Learn how to use UIVisualEffectViews with UIBlurEffect and UIVibrancyEffect in iOS 8. The example is written in Swift. See [the Swift 2 branch](https://github.com/ide/UIVisualEffects/tree/swift-2) if you are using Xcode 7 and iOS 9.
+Learn how to use UIVisualEffectViews with UIBlurEffect and UIVibrancyEffect in iOS 8 and up. The example is written in Swift.
 
 <img src="Screenshots/UIVisualEffects.png" width="375" height="667" alt="Screenshot">
 
