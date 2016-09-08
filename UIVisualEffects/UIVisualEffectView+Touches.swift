@@ -8,8 +8,8 @@ import UIKit
 /// UIVisualEffectView instances.
 extension UIVisualEffectView {
 
-    override public func hitTest(point: CGPoint, withEvent event: UIEvent?) -> UIView? {
-        let view = super.hitTest(point, withEvent: event)
+    override open func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        let view = super.hitTest(point, with: event)
         return view == self.contentView ? nil : view
     }
 }
