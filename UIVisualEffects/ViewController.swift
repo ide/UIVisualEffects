@@ -25,62 +25,10 @@ class ViewController: UIViewController {
             y: (scrollView.contentSize.height - scrollView.bounds.height) / 2)
         setContentInsetToCenterScrollView(scrollView)
 
-        let darkBlur = UIBlurEffect(style: .dark)
-        let darkBlurView = UIVisualEffectView(effect: darkBlur)
-        self.view.addSubview(darkBlurView)
-
         let lightBlur = UIBlurEffect(style: .light)
         let lightBlurView = UIVisualEffectView(effect: lightBlur)
+        lightBlurView.frame = self.view.bounds
         self.view.addSubview(lightBlurView)
-
-        let extraLightBlur = UIBlurEffect(style: .extraLight)
-        let extraLightBlurView = UIVisualEffectView(effect: extraLightBlur)
-        self.view.addSubview(extraLightBlurView)
-
-        let blurAreaAmount = self.view.bounds.height / 4
-        var remainder: CGRect
-        (darkBlurView.frame, remainder) = self.view.bounds.divided(atDistance: blurAreaAmount, from: CGRectEdge.maxYEdge)
-        (lightBlurView.frame, remainder) = remainder.divided(atDistance: blurAreaAmount, from: CGRectEdge.maxYEdge)
-        (extraLightBlurView.frame, remainder) = remainder.divided(atDistance: blurAreaAmount, from:CGRectEdge.maxYEdge)
-
-        darkBlurView.frame = darkBlurView.frame.integral
-        lightBlurView.frame = lightBlurView.frame.integral
-        extraLightBlurView.frame = extraLightBlurView.frame.integral
-
-        let extraLightVibrancyView = vibrancyEffectView(forBlurEffectView: extraLightBlurView)
-        extraLightBlurView.contentView.addSubview(extraLightVibrancyView)
-
-        let lightVibrancyView = vibrancyEffectView(forBlurEffectView: lightBlurView)
-        lightBlurView.contentView.addSubview(lightVibrancyView)
-
-        let darkVibrancyView = vibrancyEffectView(forBlurEffectView: darkBlurView)
-        darkBlurView.contentView.addSubview(darkVibrancyView)
-
-
-        let cameraButton = tintedIconButton(iconNamed: "Camera")
-        cameraButton.center = extraLightVibrancyView.convert(extraLightVibrancyView.center, from: extraLightVibrancyView.superview)
-        extraLightVibrancyView.contentView.addSubview(cameraButton)
-
-        let geniusButton = tintedIconButton(iconNamed: "Genius")
-        geniusButton.center = lightVibrancyView.convert(lightVibrancyView.center, from: lightVibrancyView.superview)
-        lightVibrancyView.contentView.addSubview(geniusButton)
-
-        let bitcoinButton = tintedIconButton(iconNamed: "Bitcoin")
-        bitcoinButton.center = darkVibrancyView.convert(darkVibrancyView.center, from: darkVibrancyView.superview)
-        darkVibrancyView.contentView.addSubview(bitcoinButton)
-
-
-        let extraLightTitleLabel = titleLabel(text: "Extra Light Blur")
-        extraLightVibrancyView.contentView.addSubview(extraLightTitleLabel)
-
-        let lightTitleLabel = titleLabel(text: "Light Blur")
-        lightVibrancyView.contentView.addSubview(lightTitleLabel)
-
-        let darkTitleLabel = titleLabel(text: "Dark Blur")
-        darkVibrancyView.contentView.addSubview(darkTitleLabel)
-
-
-        addVibrantStatusBarBackground(extraLightBlur)
     }
 
     fileprivate func vibrancyEffectView(forBlurEffectView blurEffectView:UIVisualEffectView) -> UIVisualEffectView {
@@ -96,8 +44,8 @@ class ViewController: UIViewController {
         let borderImage = UIImage(named: "ButtonRoundRect")!.withRenderingMode(.alwaysTemplate)
 
         let button = UIButton(frame: CGRect(origin: CGPoint.zero, size: borderImage.size))
-        button.setBackgroundImage(borderImage, for: UIControlState())
-        button.setImage(iconImage, for: UIControlState())
+        button.setBackgroundImage(borderImage, for: UIControl.State())
+        button.setImage(iconImage, for: UIControl.State())
         return button
     }
 
@@ -116,10 +64,6 @@ class ViewController: UIViewController {
 
         let statusBarVibrancyView = vibrancyEffectView(forBlurEffectView: statusBarBlurView)
         statusBarBlurView.contentView.addSubview(statusBarVibrancyView)
-
-        let statusBar = UIApplication.shared.value(forKey: "statusBar") as! UIView
-        statusBar.superview!.insertSubview(statusBarBlurView, belowSubview: statusBar)
-        self.view.addSubview(statusBarBlurView)
 
         let statusBarBackgroundImage = UIImage(named: "MaskPixel")!.withRenderingMode(.alwaysTemplate)
         let statusBarBackgroundView = UIImageView(image: statusBarBackgroundImage)
